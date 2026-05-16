@@ -97,6 +97,26 @@ npx jest --listTests src/app/detalhe/detalhe.component.spec.ts
 
 O backend utilizado você encontra [aqui](https://github.com/viniciosneves/jornada-milhas-api).
 
+## 🤖 Integração Contínua (GitHub Actions)
+
+Este projeto possui um pipeline de CI configurado em `.github/workflows/ci.yml`, que é executado automaticamente em todo push ou pull request para a branch `main`.
+
+### Passos do pipeline
+
+| Passo | Descrição |
+|---|---|
+| `checkout` | Clona o repositório |
+| `setup-node` | Configura Node.js 18 com cache de npm |
+| `npm ci` | Instala as dependências de forma reproduzível |
+| `npm run build` | Compila o projeto Angular |
+| `npx jest --ci --runInBand` | Executa todos os testes unitários em modo CI |
+
+### Executar os testes localmente
+
+```bash
+npx jest --ci --runInBand
+```
+
 ## 📚 Mais informações do curso
 
 O Jornada Milhas é uma StartUP fictícia utilizada nesse curso da Alura.
