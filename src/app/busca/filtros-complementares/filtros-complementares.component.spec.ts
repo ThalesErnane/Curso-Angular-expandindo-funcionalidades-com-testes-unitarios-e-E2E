@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatDialog } from '@angular/material/dialog';
 
 import { FiltrosComplementaresComponent } from './filtros-complementares.component';
 
@@ -8,7 +11,10 @@ describe('FiltrosComplementaresComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FiltrosComplementaresComponent]
+      declarations: [FiltrosComplementaresComponent],
+      imports: [HttpClientTestingModule],
+      providers: [{ provide: MatDialog, useValue: { open: jest.fn() } }],
+      schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(FiltrosComplementaresComponent);
     component = fixture.componentInstance;

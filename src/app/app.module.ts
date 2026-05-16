@@ -14,6 +14,7 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
 import { ReservaModule } from './shared/reserva/reserva.module';
+import { PagamentoModule } from './pagamento/pagamento.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReservaModule } from './shared/reserva/reserva.module';
     AutenticacaoModule,
     BuscaModule,
     DetalheModule,
-    ReservaModule
+    ReservaModule,
+    PagamentoModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

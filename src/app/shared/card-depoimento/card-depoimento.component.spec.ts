@@ -12,6 +12,12 @@ describe('CardDepoimentoComponent', () => {
     });
     fixture = TestBed.createComponent(CardDepoimentoComponent);
     component = fixture.componentInstance;
+    component.depoimento = {
+      id: 1,
+      texto: 'Muito bom',
+      autor: 'Usuaria Teste',
+      avatar: 'avatar.png'
+    };
     fixture.detectChanges();
   });
 

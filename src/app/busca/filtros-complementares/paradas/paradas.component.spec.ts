@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { ParadasComponent } from './paradas.component';
 
@@ -8,7 +10,9 @@ describe('ParadasComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ParadasComponent]
+      declarations: [ParadasComponent],
+      providers: [{ provide: MatDialog, useValue: { open: jest.fn() } }],
+      schemas: [NO_ERRORS_SCHEMA]
     });
     fixture = TestBed.createComponent(ParadasComponent);
     component = fixture.componentInstance;
