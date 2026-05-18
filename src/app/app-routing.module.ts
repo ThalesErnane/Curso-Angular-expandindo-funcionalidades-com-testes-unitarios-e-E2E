@@ -7,8 +7,10 @@ import { PerfilComponent } from './autenticacao/perfil/perfil.component';
 import { authGuard } from './autenticacao/auth.guard';
 import { BuscaComponent } from './busca/busca.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
-import { ReservaComponent } from './shared/reserva/reserva.component';
+import { ReservaComponent } from './reserva/reserva.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
+import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 const routes: Routes = [
   {
@@ -40,11 +42,18 @@ const routes: Routes = [
     path: 'reserva',
     component: ReservaComponent
   },
-  { 
+  {
     path: 'pagamento',
     component: PagamentoComponent
+  },
+  {
+    path: 'conclusao-reserva',
+    component: ConclusaoReservaComponent
+  },
+  {
+    path: 'pedidos',
+    component: PedidosComponent
   }
-
 ];
 
 @NgModule({

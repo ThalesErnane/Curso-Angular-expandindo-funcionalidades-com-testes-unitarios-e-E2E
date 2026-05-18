@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reserva',
@@ -7,6 +8,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reserva.component.scss']
 })
 export class ReservaComponent {
+
+  constructor(
+    private router: Router
+  ) {}
 
   vooRadioOptions = [
     { id: '1', value: 'VOO', label: 'Quero reservar passagens para 3 adultos.' },
@@ -28,4 +33,8 @@ export class ReservaComponent {
     acomodacaoRadioSelection: new FormControl('', Validators.required),
     carroRadioSelection: new FormControl('', Validators.required)
   });
+
+  onPagamentoClick(): void {
+    this.router.navigate(['/pagamento']);
+  }
 }

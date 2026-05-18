@@ -10,7 +10,7 @@
       <h1 class="summary-title">Resumo da Viagem</h1>
       <div class="back-link-container">
         <img loading="lazy" src="../../assets/icones/back-icon.svg" class="back-icon" alt="Back icon" />
-        <a href="/detalhes" class="back-link">Voltar a Detalhes</a>
+        <a appBackButton class="back-link">Voltar a Detalhes</a>
       </div>
     </header>
     <form [formGroup]="form">
@@ -92,7 +92,7 @@
             <div class="separator"></div>
             <p class="final-cost-title">Valor final</p>
             <p class="final-cost">R$ 3769</p>
-            <button class="payment-button" [disabled]="form.invalid">Avançar para o pagamento</button>
+            <button type="button" class="payment-button" [disabled]="form.invalid" (click)="onPagamentoClick()">Avançar para o pagamento</button>
           </div>
         </aside>
       </main>
