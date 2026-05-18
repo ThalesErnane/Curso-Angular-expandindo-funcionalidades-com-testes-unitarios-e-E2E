@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalCancelarPedidoComponent } from './modal-cancelar-pedido.component';
 
 describe('ModalCancelarPedidoComponent', () => {
@@ -8,7 +8,12 @@ describe('ModalCancelarPedidoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalCancelarPedidoComponent]
+      declarations: [ModalCancelarPedidoComponent],
+      imports: [MatDialogModule],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} }
+      ]
     });
     fixture = TestBed.createComponent(ModalCancelarPedidoComponent);
     component = fixture.componentInstance;
