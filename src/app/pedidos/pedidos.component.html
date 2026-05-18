@@ -12,8 +12,11 @@
         <a href="/" class="link-text">Voltar para home</a>
       </nav>
     </header>
+    <p *ngIf="erro" style="color: red; padding: 16px;">{{ erro }}</p>
     <section class="order-container">
-      <article *ngFor="let pedido of pedidos$ | async" class="order-card">
+      <ng-container *ngIf="(pedidos$ | async) as pedidos">
+        <p *ngIf="pedidos.length === 0 && !erro" style="padding: 16px;">Nenhum pedido encontrado.</p>
+        <article *ngFor="let pedido of pedidos" class="order-card">
         <img src="../../assets/imagens/desert.png" alt="Desert in Chile" class="order-image" />
         <div class="order-details">
           <div class="order-info">
@@ -36,6 +39,7 @@
           <button class="btn btn-secondary" (click)="onCancelarPedido(pedido.id!)">Cancelar reserva</button>
         </div>
       </article>
+      </ng-container>
     </section>
   </div>
 </app-container>

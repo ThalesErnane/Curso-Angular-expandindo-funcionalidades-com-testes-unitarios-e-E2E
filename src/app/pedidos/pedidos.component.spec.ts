@@ -18,6 +18,7 @@ describe('PedidosComponent', () => {
 
   const pedidosMock: Reserva[] = [
     {
+      id: 1,
       destino: 'Rio de Janeiro',
       dataIda: '2024-07-01',
       dataVolta: '2024-07-15',
@@ -27,6 +28,7 @@ describe('PedidosComponent', () => {
       valorTotal: 3500.00
     },
     {
+      id: 2,
       destino: 'Salvador',
       dataIda: '2024-08-01',
       dataVolta: '2024-08-10',
@@ -78,7 +80,7 @@ describe('PedidosComponent', () => {
       afterClosed: () => of(pedidosMock[0].id)
     } as any);
 
-    //component.onCancelarPedido(pedidosMock[0].id);
+    component.onCancelarPedido(pedidosMock[0].id);
 
     expect(dialogSpy).toHaveBeenCalled();
   });
