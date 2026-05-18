@@ -15,15 +15,11 @@ import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
 import { ReservaModule } from './reserva/reserva.module';
 import { PagamentoModule } from './pagamento/pagamento.module';
-import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { ModalCancelarPedidoComponent } from './pedidos/modal-cancelar-pedido/modal-cancelar-pedido.component';
+import { PedidosModule } from './pedidos/pedidos.module';
+import { ConclusaoReservaModule } from './conclusao-reserva/conclusao-reserva.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ConclusaoReservaComponent,
-    PedidosComponent,
-    ModalCancelarPedidoComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +35,8 @@ import { ModalCancelarPedidoComponent } from './pedidos/modal-cancelar-pedido/mo
     DetalheModule,
     ReservaModule,
     PagamentoModule,
+    ConclusaoReservaModule,
+    PedidosModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

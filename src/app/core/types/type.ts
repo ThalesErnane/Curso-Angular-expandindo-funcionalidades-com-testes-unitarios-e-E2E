@@ -105,6 +105,7 @@ export interface RadioOption {
 }
 
 export interface Reserva {
+  id?: number;
   destino: string;
   dataIda: string;
   dataVolta: string;
