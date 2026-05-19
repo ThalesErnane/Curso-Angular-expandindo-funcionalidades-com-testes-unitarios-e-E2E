@@ -57,7 +57,7 @@ Algumas dependencias de desenvolvimento relevantes no estado atual do projeto:
 - `jest` `^29.7.0`
 - `jest-preset-angular` `^14.6.2`
 - `@cypress/schematic` `^2.5.2`
-- `cypress` `15.15.0`
+- `cypress` `13.17.0`
 
 O Cypress foi fixado em versao especifica para evitar instabilidade no CI causada por `latest`.
 
