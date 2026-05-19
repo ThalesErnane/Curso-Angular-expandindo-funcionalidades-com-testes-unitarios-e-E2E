@@ -1,9 +1,10 @@
-<app-banner
-  src="assets/imagens/banner-conclusão.png"
-  alt="Banner pedidos">
-</app-banner>
+<figure class="banner">
+  <img
+    src="assets/imagens/banner-conclusão.png"
+    alt="Banner pedidos" />
+</figure>
 
-<app-container>
+<div class="page-container">
   <div class="order-history">
     <header class="header">
       <h1 class="title">Meus pedidos</h1>
@@ -12,10 +13,10 @@
         <a href="/" class="link-text">Voltar para home</a>
       </nav>
     </header>
-    <p *ngIf="erro" style="color: red; padding: 16px;">{{ erro }}</p>
+    <p *ngIf="erro" class="error-message">{{ erro }}</p>
     <section class="order-container">
       <ng-container *ngIf="(pedidos$ | async) as pedidos">
-        <p *ngIf="pedidos.length === 0 && !erro" style="padding: 16px;">Nenhum pedido encontrado.</p>
+        <p *ngIf="pedidos.length === 0 && !erro" class="empty-message">Nenhum pedido encontrado.</p>
         <article *ngFor="let pedido of pedidos" class="order-card">
         <img src="../../assets/imagens/desert.png" alt="Desert in Chile" class="order-image" />
         <div class="order-details">
@@ -42,4 +43,4 @@
       </ng-container>
     </section>
   </div>
-</app-container>
+</div>

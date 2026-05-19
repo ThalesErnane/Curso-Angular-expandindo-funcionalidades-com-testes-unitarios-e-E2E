@@ -4,8 +4,33 @@ $order-text-color: #49454f;
 $order-secondary-container-color: #e8def8;
 $order-on-secondary-container-color: #1d192b;
 
+.banner {
+  margin: 0 0 -6px 0;
+
+  img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.page-container {
+  display: block;
+  margin: 0 auto;
+  max-width: 1048px;
+  width: 90%;
+}
+
 .order-history {
   padding-bottom: 80px;
+
+  .error-message {
+    color: #b3261e;
+    padding: 16px;
+  }
+
+  .empty-message {
+    padding: 16px;
+  }
 
   .header {
     display: flex;

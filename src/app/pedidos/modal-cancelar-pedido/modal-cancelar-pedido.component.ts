@@ -10,9 +10,12 @@ export class ModalCancelarPedidoComponent {
   constructor(
     private dialogRef: MatDialogRef<ModalCancelarPedidoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) { }
 
   onCloseClick(): void {
     this.dialogRef.close();
+  }
+  onCancelarPedido(): void {
+    this.dialogRef.close(this.data.id);
   }
 }

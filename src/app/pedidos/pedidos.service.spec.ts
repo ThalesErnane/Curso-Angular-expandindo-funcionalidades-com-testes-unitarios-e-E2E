@@ -29,8 +29,8 @@ describe('PedidosService', () => {
 
   it('deve recuperar pedidos da API via GET', () => {
     const pedidosDummy: Reserva[] = [
-      { destino: 'Rio de Janeiro', dataIda: '2024-07-01', dataVolta: '2024-07-15', origem: 'São Paulo', estadoOrigem: 'SP', adultos: 2, valorFinal: 3500.00 },
-      { destino: 'Salvador', dataIda: '2024-08-01', dataVolta: '2024-08-10', origem: 'Brasília', estadoOrigem: 'DF', adultos: 1, valorFinal: 2000.00 }
+      { destino: 'Rio de Janeiro', dataIda: '2024-07-01', dataVolta: '2024-07-15', origem: 'São Paulo', estadoOrigem: 'SP', adultos: 2, valorTotal: 3500.00 },
+      { destino: 'Salvador', dataIda: '2024-08-01', dataVolta: '2024-08-10', origem: 'Brasília', estadoOrigem: 'DF', adultos: 1, valorTotal: 2000.00 }
     ];
 
     service.getPedidos().subscribe(pedidos => {

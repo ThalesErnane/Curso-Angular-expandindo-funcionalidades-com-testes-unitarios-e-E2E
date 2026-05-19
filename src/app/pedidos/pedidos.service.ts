@@ -14,7 +14,7 @@ export class PedidosService {
   ) { }
 
   getPedidos(): Observable<Reserva[]> {
-    return this.httpClient.get<Reserva[]>(`${this.apiUrl}/reserva/pedidos/list`);
+    return this.httpClient.get<Reserva[]>(`${this.apiUrl}/reserva/pedidos`);
   }
 
   removerPedido(id: number): Observable<Reserva[]> {

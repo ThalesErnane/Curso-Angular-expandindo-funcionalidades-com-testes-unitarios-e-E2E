@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
@@ -31,6 +32,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDialogModule,
     MatAutocompleteModule,
     MatRadioModule,
+    MatSnackBarModule,
     MatDividerModule,
     MatCheckboxModule,
     MatSliderModule
