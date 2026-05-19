@@ -14,4 +14,22 @@
 // ***********************************************************
 
 // When a command from ./commands is ready to use, import with `import './commands'` syntax
-// import './commands';
+import './commands';
+
+// Stub API calls used by e2e specs to keep Cypress independent from backend availability.
+beforeEach(() => {
+	cy.intercept('GET', '**/pagamento/qrcode', {
+		statusCode: 200,
+		body: {
+			codigo: '00020126330014BR.GOV.BCB.PIX0111122233344445204000053039865406100.005802BR5913JORNADA MILHAS6009SAO PAULO62070503***6304ABCD',
+			imagem: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB'
+		}
+	}).as('getQrCode');
+
+	cy.intercept('POST', '**/reserva', {
+		statusCode: 201,
+		body: {
+			id: 1
+		}
+	}).as('createReserva');
+});
