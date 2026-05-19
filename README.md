@@ -155,11 +155,31 @@ npm run lint
 
 O workflow de CI esta em [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
-Atualmente o pipeline executa:
+O pipeline possui dois jobs independentes:
+
+### Job `build-and-test`
+
+Valida a compilacao e os testes unitarios:
 
 1. `npm ci`
 2. `npm run build`
 3. `npx jest --ci --runInBand`
+
+### Job `e2e-cypress`
+
+Executa apos o `build-and-test` (`needs: build-and-test`) e roda os testes e2e:
+
+1. `npm ci`
+2. Sobe o Angular com `npm start`
+3. Aguarda `http://localhost:4200` estar disponivel (timeout 120s)
+4. Executa `npm run cypress:run` via `cypress-io/github-action@v6`
+
+As chamadas HTTP feitas pela aplicacao durante os testes e2e sao interceptadas via `cy.intercept` configurado em [cypress/support/e2e.ts](cypress/support/e2e.ts), o que torna os testes independentes da API backend.
+
+Specs e2e executados:
+
+- `cypress/e2e/pagamento.spec.cy.ts`: 4 testes
+- `cypress/e2e/reserva.spec.cy.ts`: 3 testes
 
 As actions do GitHub foram atualizadas para:
 
